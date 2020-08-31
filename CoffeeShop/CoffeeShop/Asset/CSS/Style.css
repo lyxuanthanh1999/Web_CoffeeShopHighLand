@@ -1,0 +1,374 @@
+﻿
+* {
+    padding: 0;
+    margin: 0;
+}
+
+@import url('https://fonts.googleapis.com/css?family=Big+Shoulders+Text&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Anton&display=swap');
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+/*							Header								*/
+.menu .item a {
+    text-decoration: none;
+    display: block;
+    font-family: 'Anton', sans-serif;
+    color: white;
+    text-transform: uppercase;
+    font-weight: bold;
+    line-height: 35px;
+}
+.menu .item p {
+    text-decoration: none;
+    display: block;
+    font-family: 'Anton', sans-serif;
+    color: white;
+    text-transform: uppercase;
+    font-weight: bold;
+    line-height: 35px;
+}
+    .menu .item a:hover {
+        background-color: #53382c;
+        border-radius: 10px;
+        -webkit-animation-name: example; /* Safari 4.0 - 8.0 */
+        -webkit-animation-duration: 4s; /* Safari 4.0 - 8.0 */
+        animation-name: example;
+        animation-duration: 4s;
+    }
+    .menu .item p:hover {
+        background-color: #53382c;
+        border-radius: 10px;
+        -webkit-animation-name: example; /* Safari 4.0 - 8.0 */
+        -webkit-animation-duration: 4s; /* Safari 4.0 - 8.0 */
+        animation-name: example;
+        animation-duration: 4s;
+    }
+
+
+
+
+/*							End Header								*/
+.clear {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.icon_MXH {
+    float: left;
+}
+
+    .icon_MXH ul {
+        list-style: none;
+    }
+
+        .icon_MXH ul li {
+            float: left;
+            border-radius: 50%;
+            margin: 0 5px;
+            display: block;
+            width: 30px;
+            height: 30px;
+            font-size: 16px;
+            line-height: 28px;
+            background-color: white;
+            text-align: center;
+            -webkit-animation-name: example; /* Safari 4.0 - 8.0 */
+            -webkit-animation-duration: 4s; /* Safari 4.0 - 8.0 */
+            animation-name: example;
+            animation-duration: 4s;
+        }
+
+/* Safari 4.0 - 8.0 */
+@-webkit-keyframes example {
+    0% {
+        background-color: red;
+    }
+
+    25% {
+        background-color: yellow;
+    }
+
+    50% {
+        background-color: blue;
+    }
+
+    100% {
+        background-color: green;
+    }
+}
+
+/* Standard syntax */
+@keyframes example {
+    0% {
+        background-color: red;
+    }
+
+    25% {
+        background-color: yellow;
+    }
+
+    50% {
+        background-color: blue;
+    }
+
+    100% {
+        background-color: green;
+    }
+}
+
+.icon_MXH ul li a i {
+    color: black;
+}
+
+.icon_MXH ul li a {
+    text-decoration: none;
+}
+
+
+.icon_MXH ul li:hover {
+    transition: all 0.3s linear;
+    color: red;
+    position: relative;
+    -webkit-animation: mymove 0.1s infinite; /* Safari 4.0 - 8.0 */
+    animation: mymove 5s infinite;
+}
+
+@-webkit-keyframes mymove {
+    from {
+        bottom: 0px;
+    }
+
+    to {
+        bottom: 7px;
+    }
+}
+
+@keyframes mymove {
+    from {
+        bottom: 0px;
+    }
+
+    to {
+        bottom: 7px;
+    }
+}
+
+.img {
+    width: 100%;
+}
+
+.item {
+    width: 100%;
+    height: 100%;
+}
+
+.banner, .banner img {
+    width: 100%;
+}
+
+.banner2 {
+    display: flex;
+    height: 460px;
+}
+
+.bannercon1 {
+    background-image: url(images/homepage-STORE_1.jpg);
+    width: 100%;
+    height: 100%;
+}
+
+.bannercon2 {
+    background-image: url(images/bg2.jpg);
+    width: 100%;
+    height: 100%;
+}
+
+#ThanhCuon {
+    display: none;
+    position: fixed;
+    bottom: 5px;
+    right: 1%;
+    cursor: pointer;
+    font: 12px arial;
+    border-radius: 50px;
+    background-color: white;
+    opacity: 0.7;
+}
+
+    #ThanhCuon i {
+        font-size: 35px;
+    }
+
+.banner2 .bannercon1 h3 {
+    margin: 70px 100px;
+    color: white;
+    font-family: 'Big Shoulders Text', cursive;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 38px;
+}
+
+.banner2 .bannercon1 p {
+    margin: 20px 100px;
+    color: #e4d5d5;
+    font-family: 'Big Shoulders Text', cursive;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-size: 30px;
+}
+
+.banner2 .bannercon2 h3 {
+    margin-top: 70px;
+    margin-left: 100px;
+    margin-bottom: 20px;
+    color: black;
+    font-family: 'Big Shoulders Text', cursive;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 38px;
+}
+
+.banner2 .bannercon2 .TinTuc {
+    display: flex;
+}
+
+    .banner2 .bannercon2 .TinTuc .img_TinTuc {
+        width: 20%;
+    }
+
+        .banner2 .bannercon2 .TinTuc .img_TinTuc img {
+            border: 1px solid #ddd;
+            padding: 5px;
+        }
+
+            .banner2 .bannercon2 .TinTuc .img_TinTuc img:hover {
+                box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
+            }
+
+    .banner2 .bannercon2 .TinTuc .tieude_TinTuc {
+        width: 80%;
+    }
+
+.img_TinTuc {
+    position: relative;
+}
+
+    .img_TinTuc a {
+        color: black;
+    }
+
+        .img_TinTuc a:hover {
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 0.1mm;
+            color: red;
+        }
+
+.image {
+    opacity: 1;
+    display: block;
+    /*width: 100%;
+	  height: auto;*/
+    transition: 0.5s ease;
+    backface-visibility: hidden;
+}
+
+.middle {
+    transition: 0.5s ease;
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+}
+
+.img_TinTuc:hover .image {
+    opacity: 0.3;
+}
+
+.img_TinTuc:hover .middle {
+    opacity: 1;
+}
+
+.text {
+    color: white;
+    font-size: 10px;
+    padding: 5px 10px;
+}
+
+.TieuDeTT a {
+    font-size: 25px;
+    text-decoration: none;
+    color: #333333;
+}
+
+    .TieuDeTT a:hover {
+        text-decoration: none;
+        color: #882106;
+    }
+
+.TinTuc img:hover {
+    transition: transform 0.7s;
+    transform: scale(1.1);
+}
+
+.NgayDangTT {
+    font-size: 12px;
+    color: gray;
+}
+
+.bgtd {
+    background-image: url("https://www.highlandscoffee.com.vn/vnt_upload/product/03_2018/menu-BANHMI-bg_2.jpg");
+    background-color: #cccccc;
+    height: auto;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+.menuThucDonLoaiMon {
+    background-color: #f0bb7c;
+    background-image: url('../../Asset/Images/menu-BANHMI-bg_2.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.menuThucDonLoaiMon1 {
+    background-color: #f0bb7c;
+    background-image: url('../../Asset/Images/menu-TEA-bg.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+<!-- Chi Tiet Thuc Don -->
+.TieuDeTD a {
+    font-size: 25px;
+    text-decoration: none;
+    font-family: 'Big Shoulders Text', cursive;
+    color: white;
+}
+.bg {
+    background-image: url('../../Asset/Images/menu-BANHMI-bg_2.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.TieuDeTD a:hover {
+    text-decoration: none;
+    color: #882106;
+}
+
+.Gia p {
+    font-size: 15px;
+    text-decoration: none;
+    font-family: 'Big Shoulders Text', cursive;
+    color: white;
+}

@@ -1,0 +1,23 @@
+﻿@{
+    ViewBag.Title = "ThucDon";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model IEnumerable<CoffeeShop.Models.LoaiMon>
+
+<div class="menuThucDonLoaiMon">
+    @foreach (var item in Model)
+    {
+        <div class="row">
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                <div class="row">
+                    <a class="col-xl-3 col-lg-3 col-md-3 col-sm-12 " style="text-align:center;color:white;padding:20px;font-family: 'Big Shoulders Text', cursive;letter-spacing:3px;" href="@Url.Action("MonCoMaLoai", "Home", new { id = @item.MaLoaiMon })">
+                        <h2>@item.TenLoaiMon</h2>
+                    </a>
+                    <div class="col-xl-9 col-lg-9 col-md-9 col-sm-12" style="min-height: 100px; padding: 20px; color: white; line-height: 20px; font-size: 20px;letter-spacing:3px; font-family: 'Times New Roman'">
+                        <p>@item.MoTa</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+</div>

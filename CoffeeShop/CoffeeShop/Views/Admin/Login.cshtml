@@ -1,0 +1,57 @@
+﻿@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 style="color: Black; text-decoration: none; padding-left: 15px;font-family: 'Big Shoulders Text';">Login</h2>
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Đăng Nhập</title>
+
+    <link rel="stylesheet" href="~/Content/css/login_registered.css" />
+</head>
+<body>
+    <div class="row" style="min-height: 350px">
+        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+            
+            <div class="form">
+                <table class="table table-dark">
+                    <tr>
+                        <td>
+                            <p style="text-align: center; color: red">ĐĂNG NHẬP QUYỀN ADMIN</p>
+                        </td>
+                    </tr>
+                    @using (Html.BeginForm())
+                    {
+                        @Html.ValidationSummary(true)
+                        <tr>
+                            <td>
+                                <input type="text" placeholder="username" name="TenDN" />
+                                @ViewData["Error1"]
+                            </td>
+
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="password" placeholder="password" name="Password" />
+                                @ViewData["Error2"]
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <button class="btn btn-primary" type="submit">Đăng nhập</button>
+                                <h3 style="color: red; font-weight: bold">@ViewBag.ThongBao</h3>
+                            </td>
+                        </tr>
+                    }
+                </table>
+                <p style="text-align: center">@Html.ActionLink("Quay về trang chủ", "Index", "Home")</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+

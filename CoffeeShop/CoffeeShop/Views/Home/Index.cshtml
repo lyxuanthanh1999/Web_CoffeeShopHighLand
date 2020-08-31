@@ -1,0 +1,39 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+    <div>
+     @*  @if (Session["TaiKhoan"] == null)
+        {
+            <a href="@Url.Action("dangnhap","NguoiDung")">Đăng Nhập</a>
+        }
+        else
+        {
+            <p>Chào Mừng : @Session["TaiKhoan"].ToString()</p>
+        }*@
+
+       @* @if(Request.Cookies["TaiKhoan"]!=null)
+        {
+            <p>Welcome : @Request.Cookies["TaiKhoan"].Value</p>
+        }
+        else
+        {
+            <a href="@Url.Action("dangnhap","NguoiDung")">Đăng Nhập</a>
+        }*@
+    </div>
+     <div class="banner">
+        <div class="" style="background-color: #130802">
+            <a href="/Home/DetailMon/1">
+                <img class="img" src="~/Asset/Images/HCO-7548-PHIN-SUA-DA-2019-TALENT-WEB_1.jpg"></a>
+        </div>
+        <div class="" style="background-color: #130802">
+            <a href="/Home/DetailMon/13">
+                <img class="img" src="~/Asset/Images/Product_banner_confirmed.jpg"></a>
+        </div>
+        <div>
+            <a href="/Home/MonCoMaLoai/3">
+                <img src="~/Asset/Images/homepage-TEA_3.jpg">
+            </a>
+        </div>
+    </div>
+    <!--                         End Banner                                       -->

@@ -1,0 +1,48 @@
+﻿@{
+    ViewBag.Title = "ThongTinDatHang";
+}
+@using CoffeeShop.Models;
+<h2>Thông Tin Đặt Hàng</h2>
+@{
+    KhachHang kh = User;
+}
+<table>
+    @using (@Html.BeginForm())
+    {
+        <tr>
+            <td>Họ Tên Khách Hàng : 
+            </td>
+            <td>
+                @kh.HoTen
+            </td>
+        </tr>
+        <tr>
+            <td>Địa Chỉ : </td>
+            <td>
+                @kh.DiaChi
+            </td>
+        </tr>
+        <tr>
+            <td>Điện Thoại
+            </td>
+            <td>@kh.DienThoai</td>
+        </tr>
+        <tr>
+            <td>Ngày Đặt
+            </td>
+            <td>@DateTime.Now.ToShortDateString()
+                @ViewData["loi1"]
+            </td>
+        </tr>
+        <tr>
+            <td>Ngày Giao Hàng</td>
+            <td>
+                <input type="date" name="ngaygiao" /></td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <input class="btn btn-primary" type="submit" value="Đồng Ý Đặt Hàng" />
+            </td>
+        </tr>
+    }
+</table>

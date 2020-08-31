@@ -1,0 +1,153 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    @*<title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")*@
+    @*      @RenderBody()
+    @Scripts.Render("~/bundles/jquery")
+    @RenderSection("scripts", required: false)*@
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="~/Asset/CSS/Style.css">
+    <link rel="stylesheet" href="~/Asset/CSS/bootstrap.min.css">
+    @* <link href="~/Asset/CSS/font-awesome.min.css" rel="stylesheet" />*@
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="~/Asset/CSS/owlcarousel/assets/owl.theme.default.min.css">
+    <link rel="stylesheet" href="~/Asset/CSS/owlcarousel/assets/owl.carousel.min.css">
+
+    <script src="~/Asset/CSS/jquery-3.4.1.min.js"></script>
+    <script src="~/Asset/CSS/owlcarousel/owl.carousel.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+
+
+    <!--End -->
+    <!--                   Header                                      -->
+    <div class="row" style="background-color: #b22830;">
+        <div class="col-12 col-sm-12 col-md-3 col-lg-3 col-xl-3">
+            <div class="text-center">
+                <a href="/home/index">
+                    <img src="~/Asset/Images/1200px-Highlands_Coffee_logo.svg.png" class="w-50" /></a>
+            </div>
+        </div>
+        <div class="col-12 col-sm-12 col-md-9 col-lg-9 col-xl-9">
+            <div class="text-center menu">
+                <div class="row">
+                    <div class="col-12 col-sm-12 col-md-2 col-lg-2 col-xl-2 item"><a href="/Home/Index">Trang Chủ</a></div>
+                    <div class="col-12 col-sm-12 col-md-2 col-lg-2 col-xl-2 item"><a href="/Home/ThucDon">THỰC ĐƠN</a></div>
+                    <div class="col-12 col-sm-12 col-md-2 col-lg-2 col-xl-2 item"><a href="/Home/TinTuc">TIN TỨC</a></div>
+                    <div class="col-12 col-sm-12 col-md-2 col-lg-2 col-xl-2 item"><a href="/Home/TrachNhiemCongDong">TRÁCH NHIỆM CỘNG ĐỒNG</a></div>
+                    <div class="col-12 col-sm-12 col-md-2 col-lg-2 col-xl-2 item">
+                        @if (Request.Cookies["TaiKhoan"] != null)
+                        {
+                            <p>Welcome : @Request.Cookies["TaiKhoan"].Value</p>
+                            <p>@Html.ActionLink("LogOut", "log", "NguoiDung")</p>
+                        }
+                        else
+                        {
+                            <a href="@Url.Action("dangnhap", "NguoiDung")">Đăng Nhập</a>
+                            
+                        }
+                    </div>
+                    @*<div class="col-12 col-sm-12 col-md-2 col-lg-2 col-xl-2 item"><a href="/GioHang/GioHang">Giỏ Hàng</a></div>*@
+                    @Html.Action("ThongTinGioHang", "GioHang")
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--                        End Header                                   -->
+
+    <!--                        Banner                                       -->
+    <div class="owl-carousel owl-theme" style="background-color: #b22830;">
+        <div class="item">
+            <a href="#">
+                <img src="~/Asset/Images/HCO-7598-20-YEARS-WEBSITE.jpg"></a>
+        </div>
+        <div class="item">
+            <a href="#">
+                <img src="~/Asset/Images/VIET.Brand_Campaign_WEBBANNER.jpg"></a>
+        </div>
+        <div class="item">
+            <a href="#">
+                <img src="~/Asset/Images/HCO-7548-PHIN-SUA-DA-2019-TALENT-WEB_1.jpg"></a>
+        </div>
+        <div class="item">
+            <a href="#">
+                <img src="~/Asset/Images/HCO-7598-20-YEARS-WEBSITE.jpg"></a>
+        </div>
+        <div class="item">
+            <a href="#">
+                <img src="~/Asset/Images/HCO-7548-PHIN-SUA-DA-2019-TALENT-WEB_1.jpg"></a>
+        </div>
+        <div class="item">
+            <a href="#">
+                <img src="~/Asset/Images/VIET.Brand_Campaign_WEBBANNER.jpg"></a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+            @RenderBody()
+        </div>
+    </div>
+
+    <!--                         Footer                                           -->
+    <div class="container-fluid" style="background-color: #53382c">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12 icon_MXH">
+                    <ul>
+                        <li><a href="https://www.facebook.com/highlandscoffeevietnam/"><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="https://www.youtube.com/channel/UCHEqa2uTf8uXrGWrnU3ThgA"><i class="fa fa-youtube"></i></a></li>
+                        <li><a href="https://www.instagram.com/highlandscoffeevietnam/"><i class="fa fa-instagram"></i></a></li>
+                    </ul>
+                </div>
+                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12" style="color: white;">
+                    © 2018 Highlands Coffee. All rights reserved
+                </div>
+                <div class="col-xl-2 col-lg-2 col-md-2 col-sm-12" style="color: white;">
+                    <i class="fa fa-paper-plane"></i>@*Đăng ký để nhận bản tin*@
+                    <div id="LuaChonDich"></div>
+                </div>
+                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12" style="color: white;">
+                    <i class="fa fa-envelope-square"></i>Customerservice@highlandscoffee.com.vn
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--                        End Footer                                       -->
+    <script>
+        $(document).ready(function () {
+            $(".owl-carousel").owlCarousel();
+        });
+    </script>
+    @* Dịch *@
+    <script type="text/javascript"
+        src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit">
+    </script>
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({ pageLanguage: 'vi' }, 'LuaChonDich');
+        }
+    </script>
+    @* End Dịch *@
+    <!-- Thanh Công Cụ -->
+    <script type="text/javascript">
+        $(function () {
+            $(window).scroll(function () {
+                if ($(this).scrollTop() != 0) { $("#ThanhCuon").fadeIn() }
+                else { $("#ThanhCuon").fadeOut() }
+            });
+            $("#ThanhCuon").click(function () {
+                $("body,html").animate({ scrollTop: 0 }, 800);
+                return false
+            })
+        });`
+    </script>
+    <a id='ThanhCuon'>
+        <i class="fa fa-angle-up"></i></script>
+</body>
+</html>

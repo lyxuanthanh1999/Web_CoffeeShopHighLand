@@ -1,0 +1,23 @@
+﻿@{
+    ViewBag.Title = "TinTuc";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model IEnumerable<CoffeeShop.Models.TinTuc>
+
+<h2 style="font-family: 'Big Shoulders Text', cursive; text-align: center; font-size:40px; color:#53382c;font-weight:bold;">Tin Tức</h2>
+<div class="row">
+    @foreach (var item in Model)
+    {
+        <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 TinTuc">
+            <div class="text-center">
+                <a href="@Url.Action("DetailTinTuc", "Home", new { id=@item.MaTin})"><img class="rounded" style="width: 370px;height:300px" src="~/Asset/Images/@item.AnhTinTuc" alt="@item.MaTin" /></a>
+            </div>
+            <div class="text-center TieuDeTT">
+                <a class="text-center " href="@Url.Action("DetailTinTuc", "Home", new { id = @item.MaTin })">@item.TieuDe</a>
+            </div>
+            <div class="text-center">
+                <p class="NgayDangTT">@item.NgayDang</p>
+            </div>
+        </div>
+    }
+</div>

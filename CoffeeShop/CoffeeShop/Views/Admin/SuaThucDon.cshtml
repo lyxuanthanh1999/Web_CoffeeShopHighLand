@@ -1,0 +1,54 @@
+﻿@{
+    ViewBag.Title = "SuaThucDon";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model CoffeeShop.Models.ThucDon
+
+<h2 style="text-align: center">SỬA THÔNG TIN MÓN</h2>
+<br />
+@using (Html.BeginForm("SuaThucDon", "Admin", FormMethod.Post,
+                new { enctype = "multipart/form-data" }))
+{
+    <table>
+   @*     <tr>
+            <td>Loại Món</td>
+            <td>
+                
+                @Html.DropDownList("kq",ViewBag.MaMon as SelectList)}
+            </td>
+        </tr>*@
+        <tr>
+            <td>Tên Món</td>
+            <td>
+                @Html.TextBox("txtTenMon")
+                @ViewData["loi1"]
+            </td>
+        </tr>
+        <tr>
+            <td>Mô Tả</td>
+            <td>
+                @Html.TextArea("txtaMoTa")
+                @ViewData["loi2"]
+            </td>
+        </tr>
+        <tr>
+            <td>Giá</td>
+            <td>
+                @Html.TextBox("txtGia")
+                @ViewData["loi3"]
+            </td>
+        </tr>
+        <tr>
+            <td>HÌnh</td>
+            <td>
+                <input type="file" name="fileUp" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button>sub</button>
+            </td>
+        </tr>
+    </table>
+}
+@Html.ActionLink("Về trang Chỉnh Sửa Thực Đơn", "ChinhSua", "Admin")

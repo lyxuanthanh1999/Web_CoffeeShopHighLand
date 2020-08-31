@@ -1,0 +1,48 @@
+﻿@{
+    ViewBag.Title = "ChinhSua";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using CoffeeShop.Models;
+@using PagedList.Mvc;
+@model PagedList.PagedList<ThucDon>
+
+<br />
+<h2 style="text-align: center; font-weight: bold; font-size: 20px">SẢN PHẨM CỦA CHÚNG TÔI</h2>
+<br />
+<div class="text-center TieuDeTD">
+    <a style="color:black;font-size:20px;letter-spacing:3px;font-weight:bold; text-align:center;" href="@Url.Action("Add", "Admin")">Thêm Mới</a>
+</div>
+<div class="row" style="margin-left: 60px">
+    @foreach (var item in Model)
+    {    
+        <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 TinTuc ">
+            <div class="text-center">
+                <img class="rounded" style="width: 370px;height:300px" src="~/Asset/Images/@item.Hinh" alt="@item.MaMon" />
+            </div>
+            <div class="text-center TieuDeTD">
+                <p style="color: black; font-size: 20px; letter-spacing: 3px; font-weight: bold; text-align: center;">@item.TenMon</p>
+                <a style="color:black;font-size:20px;letter-spacing:3px;font-weight:bold; text-align:center;" href="@Url.Action("SuaThucDon", "Admin", new { id = @item.MaMon })">Sửa</a>
+            </div>
+            <div class="text-center TieuDeTD">
+                <a style="color:black;font-size:20px;letter-spacing:3px;font-weight:bold; text-align:center;" href="@Url.Action("ChiTietThucDon", "Admin", new { id = @item.MaMon })">Chi Tiết</a>
+            </div>
+            <div class="text-center TieuDeTD">
+                <a style="color:black;font-size:20px;letter-spacing:3px;font-weight:bold; text-align:center;" href="@Url.Action("XoaThucDon", "Admin", new { id = @item.MaMon })">Xóa</a>
+            </div>
+        </div>
+    }
+</div>
+
+<div style="margin-left: 60px">@(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) / @Model.PageCount</div>
+<div class="menuPage" style="margin-left: 30px">
+    @Html.PagedListPager(Model, page => Url.Action("ChinhSua", "Admin", new { page = page }))
+</div>
+<style>
+    .menuPage li {
+        display: inline;
+        border: 1px solid black;
+        width: 30px;
+        height: 30px;
+        text-align: center;
+    }
+</style>

@@ -1,0 +1,18 @@
+﻿@{
+    ViewBag.Title = "DetailTinTuc";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row">
+    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12" style="margin-left: 35px; letter-spacing: 3px;">
+        <h2>@Model.TieuDe</h2>
+    </div>
+    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12" >
+        <p style="text-align: justify;font-size: 15px; letter-spacing: 2px; font-weight: bold;font-family: 'Open Sans', sans-serif !important;line-height: 24px !important;">@Model.NoiDung</p>
+         <img style="width:100%;" src="~/Asset/Images/@Model.AnhTinTuc"/>
+    </div>
+</div>
+<p style="font-size: 20px; font-weight: bold;color:gray">@Model.NgayDang</p>
+
+
+

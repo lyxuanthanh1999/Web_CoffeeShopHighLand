@@ -1,0 +1,25 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row">
+    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+        <h2 style="text-align: center; letter-spacing: 3px; color: black; min-height: 400px">Chào Mừng Tới Trang Admin</h2>
+    </div>
+    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+        <p>
+            @if (Session["TaiKhoanTenAd"] != null)
+            {
+                <p>Welcome : @Session["TaiKhoanTenAd"].ToString()</p>
+                <p>@Html.ActionLink("LogOut", "log", "NguoiDung")</p>
+                <a class="btn btn-primary" href="/Admin/ChinhSua">Chỉnh Sửa Thực Đơn</a>
+            }
+            else
+            {
+                <a class="btn btn-primary" href="@Url.Action("login", "Admin")">Đăng Nhập</a>
+                            
+            }
+        </p>
+    </div>
+</div>

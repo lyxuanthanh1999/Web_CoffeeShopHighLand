@@ -1,0 +1,21 @@
+﻿@{
+    ViewBag.Title = "TrachNhiemCongDong";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model IEnumerable<CoffeeShop.Models.TrachNhiemCongDong>
+<h2 style="font-family: 'Big Shoulders Text', cursive; text-align: center; font-size:40px; color:#53382c;font-weight:bold;">Trách Nhiệm Cộng Đồng</h2>
+<hr />
+<div class="row">
+    @foreach (var item in Model)
+    {
+        <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 TinTuc padding-top: 30px;">
+            <div class="text-center">
+                <a href="@Url.Action("DetailTrachNhiemCongDong","Home",new{id = @item.MaTNCD })">
+                    <img class="rounded" style="width: 370px;height:300px" src="~/Asset/Images/@item.AnhTinTuc" alt="@item.MaTNCD" /></a>
+            </div>
+            <div class="text-center TieuDeTT">
+                <a class="text-center " href="@Url.Action("DetailTrachNhiemCongDong","Home",new{id = @item.MaTNCD })">@item.TieuDe</a>
+            </div>
+        </div>
+    }
+</div>

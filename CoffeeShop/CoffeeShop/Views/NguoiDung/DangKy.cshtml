@@ -1,0 +1,83 @@
+﻿@{
+    ViewBag.Title = "DangKy";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="row">
+
+
+    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+        
+        <table class="table table-dark">
+            @using (Html.BeginForm())
+            {
+                <tr>
+                    <td colspan="2">
+                        <h2>Đăng Ký Thành Viên</h2>
+                        <p style="color:red;">@ViewData["ThongBao"]</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Họ Tên Khách Hàng : </td>
+                    <td>
+                        @Html.TextBox("HoTenKH")
+                        @ViewData["Loi1"]
+                    </td>
+                </tr>
+                
+                <tr>
+                    <td>Tên Đăng Nhập : </td>
+                    <td>
+                        @Html.TextBox("TenDN")
+                        @ViewData["Loi2"]
+                    </td>
+                </tr>
+                <tr>
+                    <td>Mật Khẩu : </td>
+                    <td>
+                        @Html.Password("MatKhau")
+                        @ViewData["Loi3"]
+                    </td>
+                </tr>
+                <tr>
+                    <td>Mật Khẩu Nhập Lại : </td>
+                    <td>
+                        @Html.Password("MatKhauNhapLai")
+                        @ViewData["Loi4"]
+
+                    </td>
+                </tr>
+                <tr>
+                    <td>Địa Chỉ :</td>
+                    <td>@Html.TextBox("DiaChi")</td>
+                </tr>
+                <tr>
+                    <td>Email : </td>
+                    <td>
+                        <input type="email" value="Email" />
+                        @ViewData["Loi5"]
+                    </td>
+                </tr>
+                <tr>
+                    <td>Điện Thoại : </td>
+                    <td>
+                        @Html.TextBox("DienThoai")
+                        @ViewData["Loi6"]
+                    </td>
+                </tr>
+                <tr>
+                    <td>Ngày Sinh : </td>
+                    <td>
+                        <input type="date" name="NgaySinh" />
+                        @ViewData["date"]
+                    </td>
+                </tr>
+
+                <tr>
+                    <td></td>
+                    <td>
+                        <input class="btn btn-primary" type="submit" value="Đăng Ký " /></td>
+                </tr>
+            }
+        </table>
+    </div>
+</div>

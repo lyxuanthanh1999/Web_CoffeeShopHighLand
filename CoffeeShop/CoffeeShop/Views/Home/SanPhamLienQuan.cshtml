@@ -1,0 +1,11 @@
+﻿@using CoffeeShop.Models
+@model List<ThucDon>
+
+@foreach (var item in Model)
+{
+        <div>
+            @item.TenMon
+            <img src="~/Asset/Images/@item.Hinh"/>
+        </div>
+}
+

@@ -1,0 +1,26 @@
+﻿@{
+    ViewBag.Title = "MonCoMaLoai";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model IEnumerable<CoffeeShop.Models.ThucDon>
+<div class="row bg">
+    <h2><a style="color: white; text-decoration: none; padding-left: 15px;font-family: 'Big Shoulders Text';" href="/Home/ThucDon">Quay Về Trang Thực Đơn</a></h2>
+</div>
+<div class="row bg">
+    @foreach (var item in Model)
+    {
+        <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 TinTuc ">
+            <div class="text-center">
+                <img class="rounded" style="width: 370px;height:300px" src="~/Asset/Images/@item.Hinh" alt="@item.MaMon" />
+            </div>
+            <div class="text-center TieuDeTD">
+                <p style="color: white; font-size: 20px; letter-spacing: 3px; font-weight: bold; text-align: center;">@item.TenMon</p>
+                <a style="color:white;font-size:20px;letter-spacing:3px;font-weight:bold; text-align:center;" href="@Url.Action("DetailMon", "Home", new { id = @item.MaMon })">Chi Tiết</a>
+            </div>
+            <div class="text-center Gia">
+                <p style="color: white; font-size: 20px; letter-spacing: 3px; font-weight: bold; text-align: center;">@item.Gia VND</p>
+            </div>
+        </div>
+    }
+
+</div>

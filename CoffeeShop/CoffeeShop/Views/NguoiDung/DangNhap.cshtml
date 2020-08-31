@@ -1,0 +1,40 @@
+﻿@{
+    ViewBag.Title = "DangNhap";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<p style="color:red;">@ViewBag.ThongBao</p>
+<table class="table">
+    <tr>
+        <td colspan="2">
+            <h2>Đăng Nhập</h2>
+        </td>
+    </tr>
+    @using (Html.BeginForm())
+    {
+        @Html.ValidationSummary(true)
+        <tr>
+            <td>Tên Đăng Nhập : 
+            </td>
+            <td>
+                @Html.TextBox("tendn")
+                @ViewData["Loi1"]
+            </td>
+        </tr>
+        <tr>
+            <td>Mật Khẩu : 
+            </td>
+            <td>
+                @Html.Password("matkhau")
+                @ViewData["Loi2"]
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <input class="btn btn-primary" type="submit" value="Đăng Nhập " />
+                <a class="btn btn-primary" href="@Url.Action("dangky", "NguoiDung")">Đăng Ký</a>
+            </td>
+        </tr>
+    }
+</table>

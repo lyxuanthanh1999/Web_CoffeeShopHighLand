@@ -1,0 +1,72 @@
+﻿@{
+    ViewBag.Title = "Add";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+    if (Session["TaiKhoanAd"] == null)
+    {
+        Response.Redirect("~/Admin/Login");
+    }
+
+}
+@model CoffeeShop.Models.ThucDon
+
+<div class="text-center TieuDeTD">
+    <h2 style="color: black; font-size: 20px; letter-spacing: 3px; font-weight: bold; text-align: center;">Thêm Móm Mới</h2>
+</div>
+@using (Html.BeginForm("Add", "Admin", FormMethod.Post, new { @enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+    <div class="row">
+        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+            @Html.DropDownList("MaLoaiMon")
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+            <p style="color: black; font-size: 20px; letter-spacing: 3px; font-weight: bold; text-align: center;">Tên Món</p>
+            @Html.EditorFor(model => model.TenMon)
+            @Html.ValidationMessageFor(model => model.TenMon)
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+            <p style="color: black; font-size: 20px; letter-spacing: 3px; font-weight: bold; text-align: center;">Giá</p>
+            @Html.EditorFor(model => model.Gia)
+            @Html.ValidationMessageFor(model => model.Gia)
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+            <p style="color: black; font-size: 20px; letter-spacing: 3px; font-weight: bold; text-align: center;">Mô Tả</p>
+            @Html.EditorFor(model => model.MoTa)
+            @Html.ValidationMessageFor(model => model.MoTa)
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+            <p style="color: black; font-size: 20px; letter-spacing: 3px; font-weight: bold; text-align: center;">Hình Ảnh</p>
+            <input type="file" name="fileupload"/>
+            @ViewBag.ThongBao
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+            <input type="submit" class="btn btn-primary" value="Thêm Sản Phẩm" />
+        </div>
+    </div>
+}
+ <div class="row">
+        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+           @Html.ActionLink("Trở Về Trang Administrator", "Index","Admin")
+        </div>
+    </div>
+<style>
+    #TenMon,#MaLoaiMon,#Gia,#MoTa {
+        text-align:center;
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        box-sizing: border-box;
+    }
+</style>

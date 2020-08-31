@@ -1,0 +1,39 @@
+﻿@{
+    ViewBag.Title = "XoaThucDon";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model CoffeeShop.Models.ThucDon
+<h2>XoaThucDon</h2>
+<h2 style="color: black; font-size: 35px; letter-spacing: 3px; font-weight: bold; text-align: center;">XÁC NHẬN XÓA MÓN</h2>
+<br />
+<h3 style="color: black; font-size: 25px; letter-spacing: 3px; font-weight: bold; text-align: center;">Bạn có chắc chắn muốn xóa điện thoại này?</h3><br />
+
+<table class="center">
+    <tr style="border-top:1px solid black">
+        <td style="color: black; font-size: 15px; letter-spacing: 3px; font-weight: bold; text-align: center;">Tên Món</td>
+        <td style="margin-left:10px">@Html.DisplayFor(model => model.TenMon)</td>
+    </tr>
+    <tr>
+        <td style="color: black; font-size: 15px; letter-spacing: 3px; font-weight: bold; text-align: center;">Ảnh</td>
+        <td><img src="@Url.Content("~/Asset/images/"+ Model.Hinh)" width="200" /></td>
+    </tr>
+    <tr>
+        <td style="color: black; font-size: 15px; letter-spacing: 3px; font-weight: bold; text-align: center;">Mô Tả</td>
+        <td>@Html.DisplayFor(model => model.MoTa)</td>
+    </tr>
+    <tr>
+        <td style="color: black; font-size: 15px; letter-spacing: 3px; font-weight: bold; text-align: center;">Loại Món</td>
+        <td>@Html.DisplayFor(model => model.LoaiMon.TenLoaiMon)</td>
+    </tr>
+    <tr>
+        <td style="color: black; font-size: 15px; letter-spacing: 3px; font-weight: bold; text-align: center;">Đơn giá</td>
+        <td>@String.Format("{0:0,0}", Model.Gia) VNĐ</td>
+    </tr>
+</table>
+<br />
+@using (Html.BeginForm()) {
+    <p style="text-align:center">
+        <input type="submit" value="Delete" class="btn btn-default" style="color:white; background-color:red; font-weight:bold" /> |
+        @Html.ActionLink("Về trang Admin", "ChinhSua", "Admin")
+    </p>
+}
